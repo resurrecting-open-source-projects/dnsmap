@@ -1,7 +1,0 @@
-21/02/2009
-* optimize so that domains are not resolved twice, which should improve speed
-* ipv6 support
-* clever numerical domain bruteforce for clusters. i.e.: www2, www3
-* pickup new subdomains via reverse lookups
-* multi-threading
-* advanced bruteforcing to enumerate domains with wildcards enabled

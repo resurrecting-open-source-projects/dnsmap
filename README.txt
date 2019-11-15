@@ -2,7 +2,7 @@ DNSMAP README FILE
 
 INTRODUCTION
 
-dnsmap was originally released in back in 2006 and was inspired by the
+dnsmap was originally released back in 2006 and was inspired by the
 fictional story "The Thief No One Saw" by Paul Craig, which can be found
 in the book "Stealing the Network - How to 0wn the Box"
 
@@ -20,8 +20,6 @@ If you are interested in researching stealth computer intrusion techniques,
 I suggest reading this excellent (and fun) chapter which you can find for
 *free* on the web:
 
-http://www.google.com/search?q=%22The+Thief+No+One+Saw%22+%22Paul+Craig%22
-http://www.syngress.com/book_catalog/249_STL_NTW/sample.pdf
 http://www.ethicalhacker.net/content/view/45/2/
 
 I'm happy to say that dnsmap was included in Backtrack 2 and 3 - although the version
@@ -50,7 +48,7 @@ Example of manual installation:
 
 # cp ./dnsmap /usr/local/bin/dnsmap
 
-If you wish to bruteforce several target domains in a bulk fashion, you can use the
+If you wish to bruteforce several target domains in bulk fashion, you can use the
 included dnsmap-bulk.sh script. Just copy the script to /usr/local/bin/ so you can 
 call it from any location. i.e.:
 
@@ -63,12 +61,7 @@ And set execute permissions. e.g.:
 
 LIMITATIONS
 
-This tool won't work with target domains which use wildcards. When a domain
-uses wildcards, all bruteforced subdomains will resolve to the same IP address,
-which makes enumerating target servers unfeasible.
-
-dnsmap *does* however inform the user when wildcards have been detected and suggests
-choosing a different target domain.
+Lack of multi-threading. This speed issue will hopefully be resolved in future versions.
 
 
 FUN THINGS THAT CAN HAPPEN

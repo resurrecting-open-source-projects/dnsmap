@@ -1,10 +1,10 @@
 DNSMAP README FILE
 
-* COMMENTS *
+COMMENTS
 
-This tool was inspired by the fictional story "The Thief No One Saw" 
-by Paul Craig which can be found in the book "Stealing the Network 
-- How to 0wn the Box". 
+This tool was originally released in 2006 and was inspired by the fictional
+story "The Thief No One Saw" by Paul Craig, which can be found in the book
+"Stealing the Network - How to 0wn the Box"
 
 If you are interested in researching stealth computer intrusion techniques,
 I suggest reading this excellent (and fun) chapter which you can find for
@@ -14,28 +14,38 @@ http://www.google.com/search?q=%22The+Thief+No+One+Saw%22+%22Paul+Craig%22
 http://www.syngress.com/book_catalog/249_STL_NTW/sample.pdf
 http://www.ethicalhacker.net/content/view/45/2/
 
-I'm happy to say that this tool was included in Backtrack 2 and has been
+I'm happy to say that this tool was included in Backtrack 2 and 3 and has been
 reviewed by the community:
 
 http://backtrack.offensive-security.com/index.php?title=Tools
 http://www.linuxhaxor.net/2007/07/14/backtrack-2-information-gathering-all-dnsmap/
 
 
-* COMPILING *
+COMPILING
 
 Compiling should be straightforward:
 
 $ gcc dnsmap.c -o dnsmap
 
 
-* INSTALLATION *
+INSTALLATION
 
 Example of manual installation:
 
-# cp ./dnsmap /usr/bin/dnsmap
+# cp ./dnsmap /usr/local/bin/dnsmap
+
+If you wish to bruteforce several target domains in a bulk fashion, you can use the
+included dnsmap-bulk.sh script. Just copy the script to /usr/local/bin/ so you can 
+call it from any location. i.e.:
+
+# cp ./dnsmap-bulk.sh /usr/local/bin/
+
+And set execute permissions. i.e.:
+
+# chmod ugo+x /usr/local/bin/dnsmap-bulk.sh
 
 
-* LIMITATIONS *
+LIMITATIONS
 
 This tool won't work with target domains which use wildcards. When a domain
 uses wildcards, all bruteforced subdomains will resolve to the same IP address,
@@ -45,7 +55,7 @@ dnsmap *does* however inform the user when wildcards have been detected and sugg
 choosing a different target domain.
 
 
-* FUN THINGS THAT CAN HAPPEN *
+FUN THINGS THAT CAN HAPPEN
 
 1. Finding interesting remote access servers (i.e.: https://extranet.targetdomain.com)
 
@@ -55,14 +65,16 @@ choosing a different target domain.
    of your target organization (registry lookups - aka whois is your friend)
 
 4. Sometimes you find that some bruteforced subdomains resolve to internal IP addresses
-   (RFC 1918). This is great as sometimes they are real up-to-date A records which means that
+   (RFC 1918). This is great as sometimes they are real up-to-date "A" records which means that
    it *is* possible to enumerate internal servers of a target organization from the Internet
    by only using standard DNS resolving (as oppossed to zone transfers for instance).
 
 
-* USAGE *
+USAGE
 
 Bruteforcing can be done either with dnsmap's built-in wordlist or a user-supplied wordlist.
+Results can be saved in CSV and human-readable format for further processing. dnsmap does NOT require root
+privileges to be run.
 
 Example of subdomain bruteforcing using dnsmap's built-in word-list:
 
@@ -70,18 +82,38 @@ $ dnsmap targetdomain.foo
 
 Example of subdomain bruteforcing using a user-supplied wordlist:
 
-$ dnsmap targetdomain.foo wordlist.txt
+$ dnsmap targetdomain.foo -w wordlist.txt
 
-For bruteforcing a list of domains in a bulk fashion use the bash script provided. i.e.:
+Example of subdomain bruteforcing using the built-in wordlist and saving the results to /tmp/ :
 
-$ ./dnsmap-bulk.sh domains.txt
- 
+$ dnsmap target-fomain.foo -r ./
 
-* WORDLISTS *
+For bruteforcing a list of target domains in a bulk fashion use the bash script provided. i.e.:
+
+$ dnsmap-bulk.sh domains.txt /tmp/results/
+
+
+WORDLISTS
 
 http://packetstormsecurity.org/Crackers/wordlists/dictionaries/
+http://www.cotse.com/tools/wordlists1.htm
+
+
+OTHER SIMILAR TOOLS
+
+WS-DNS-BFX
+http://ws.hackaholic.org/tools/WS-DNS-BFX.tgz
+
+DNSDigger
+http://www.ernw.de/download/dnsdigger.zip
+
+Fierce Domain Scan
+http://ha.ckers.org/fierce/
+
+Desperate
+http://www.sensepost.com/research_misc.html
 
 
 GNUCITIZEN | http://gnucitizen.org
 
-- Feb. 2008
+- Feb. 2009

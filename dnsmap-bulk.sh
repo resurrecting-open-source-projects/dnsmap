@@ -1,24 +1,14 @@
 #!/bin/bash
-
-if [[ $# -ne 1  && $# -ne 2 ]]
+if [[ $# -ne 2 ]]
 then
-	echo "usage: $0 <domains-file> [dictionary-file]";
+	echo "usage: `basename $0` <domains-file> <results-path>";
 	echo "i.e.:";
-	echo "$0 domains.txt";
-	echo "$0 domains.txt mywordlist.txt";
+	echo "`basename $0` domains.txt";
+	echo "`basename $0` domains.txt /tmp/";
 	exit
-fi
-
-if [[ $# -eq 1 ]]
-then
-	for DOMAIN in `cat $1`
+else
+	for i in `cat $1`
 	do
-		./dnsmap $DOMAIN
-	done
-elif [[ $# -eq 2 ]]
-then
-	for DOMAIN in `cat $1`
-	do
-		./dnsmap $DOMAIN $2
-	done
+		dnsmap $i -r $2
+	done		
 fi

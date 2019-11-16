@@ -1,0 +1,24 @@
+name: C/C++ CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: autogen
+      run: ./autogen.sh
+    - name: configure
+      run: ./configure --prefix=/home/runner
+    - name: make
+      run: make
+    - name: make install
+      run: make install
+    - name: execution
+      continue-on-error: true
+      run: /home/runner/bin/dnsmap
+    - name: make distclean
+      run: make distclean

@@ -3,8 +3,8 @@
 
 SUBDIRS = src
 
-#man_MANS = man/dnsmap.1
-#EXTRA_DIST = man/dnsmap.1
+man_MANS = man/dnsmap.1 man/dnsmap-bulk.1
+EXTRA_DIST = man/dnsmap.1 man/dnsmap-bulk.1
 
 distclean-local:
 	-rm -rf autom4te.cache/ \

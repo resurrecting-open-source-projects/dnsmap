@@ -1,0 +1,32 @@
+NAME
+  dnsmap-bulk - mass scan using dnsmap
+
+SYNOPSIS
+  dnsmap-bulk <domains-file> [results-path]
+
+DESCRIPTION
+  dnsmap-bulk is used to brute force several target domains in bulk fashion. In other words is possible
+  use a list of domains from a file to scan multiple targets using dnsmap as backend.
+
+  WARNING: using dnsmap-bulk, dnsmap will always use the default options, i.e. built-in wordlist,
+  delay = 10 ms, never ignoring IPs.
+
+OPTIONS
+  domain-file   A file with domains to be scanned, one per line.
+  results-path  A path where the results will be saved. dnsmap will use the -r option to name files and
+                will be created a file for each domain. This item is optional and if not supplied,
+                dnsmap won't create files.
+
+EXAMPLE
+  For bruteforcing a list of target domains in a bulk fashion, saving all results inside a directory:
+
+    $ dnsmap-bulk domains.txt /tmp/results/
+
+SEE ALSO
+  dnsmap(1)
+
+AUTHOR
+  dnsmap-bulk was originally written by "pagvac" in 2006. Currently it is maintained by volunteers,
+  inside dnsmap project, at https://github.com/resurrecting-open-source-projects/dnsmap/
+
+  This manpage was written by Joao Eriberto Mota Filho.

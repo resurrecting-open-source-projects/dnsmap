@@ -9,11 +9,11 @@ then
 fi
 for i in `cat $1`
 do
-	if [[ $# -eq 1 ]] 
+	if [[ $# -eq 1 ]]
 	then	
 		dnsmap $i
 	elif [[ $# -eq 2 ]]
 	then
 		dnsmap $i -r $2
 	fi
-done		
+done

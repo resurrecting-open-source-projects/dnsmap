@@ -45,7 +45,7 @@ publicly allowed these days by the way).
 Fun things that can happen:
 
  1. Finding interesting remote access servers (e.g.:
-    https://extranet.example.com).
+    https:<span>://</span>extranet.example.com).
 
  2. Finding badly configured and/or unpatched servers (e.g.: test.example.com).
 

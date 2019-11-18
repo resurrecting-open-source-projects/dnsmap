@@ -21,7 +21,7 @@
 
 #define MAXSUBSIZE 	100
 #define MAXSTRSIZE 	200
-#define BANNER 		"dnsmap 0.30 - DNS Network Mapper\n\n"
+#define BANNER 		"dnsmap 0.35 - DNS Network Mapper\n\n"
 #define USAGE 		"usage: dnsmap <target-domain> [options]\n\noptions:\n"\
 			"-w <wordlist-file>\n-r <regular-results-file>\n-c <csv-results-file>\n"\
 			"-d <delay-millisecs>\n-i <ips-to-ignore> (useful if you're obtaining false positives)\n\n"

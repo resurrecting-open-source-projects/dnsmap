@@ -1,40 +1,41 @@
 /*
- * ** dnsmap - DNS Network Mapper by pagvac
- * ** Copyright (C) 2010 gnucitizen.org
- * **
- * ** This program is free software; you can redistribute it and/or modify
- * ** it under the terms of the GNU General Public License as published by
- * ** the Free Software Foundation; either version 2 of the License, or
- * ** (at your option) any later version.
- * **
- * ** This program is distributed in the hope that it will be useful,
- * ** but WITHOUT ANY WARRANTY; without even the implied warranty of
- * ** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * ** GNU General Public License for more details.
- * **
- * ** You should have received a copy of the GNU General Public License
- * ** along with this program; if not, write to the Free Software
- * ** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
- * ** MA  02110-1301, USA.
- * */
+# dnsmap - DNS Network Mapper by pagvac
+# Copyright 2006-2010 gnucitizen.org
+# Copyright 2019      Joao Eriberto Mota Filho <eriberto@eriberto.pro.br>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+# MA  02110-1301, USA.
+*/
 
 #define MAXSUBSIZE 	100
 #define MAXSTRSIZE 	200
-#define BANNER 		"dnsmap 0.30 - DNS Network Mapper by pagvac (gnucitizen.org)\n\n"
+#define BANNER 		"dnsmap 0.30 - DNS Network Mapper\n\n"
 #define USAGE 		"usage: dnsmap <target-domain> [options]\noptions:\n"\
 			"-w <wordlist-file>\n-r <regular-results-file>\n-c <csv-results-file>\n"\
 			"-d <delay-millisecs>\n-i <ips-to-ignore> (useful if you're obtaining false positives)\n\n"
-#define EXAMPLES 	"e.g.:\ndnsmap target-domain.foo\n"\
-			"dnsmap target-domain.foo -w yourwordlist.txt -r /tmp/domainbf_results.txt\n"\
-			"dnsmap target-fomain.foo -r /tmp/ -d 3000\n"\
-			"dnsmap target-fomain.foo -r ./domainbf_results.txt\n\n"
+#define EXAMPLES 	"e.g.:\ndnsmap example.com\n"\
+			"dnsmap example.com -w yourwordlist.txt -r /tmp/domainbf_results.txt\n"\
+			"dnsmap example.com -r /tmp/ -d 3000\n"\
+			"dnsmap example.com -r ./domainbf_results.txt\n\n"
 #define INTIPWARN	"[+] warning: internal IP address disclosed\n"
-#define SAMESITEXSSWARN "[+] warning: domain might be vulnerable to \"same site\" scripting (http://snipurl.com/etbcv)\n"
+#define SAMESITEXSSWARN "[+] warning: domain might be vulnerable to \"same site\" scripting (https://seclists.org/bugtraq/2008/Jan/270)\n"
 #define WILDCARDWARN	"[+] warning: domain might use wildcards. "\
 			"%s will be ignored from results\n", wildcardIpStr
 #define INPUTERR	"[+] error: entered parameter(s) is/are too long!\n"
 #define DELAYINPUTERR	"[+] error: delay must be between 1 and 300000 milliseconds (5 minutes)!\n"
-#define FILTIPINPUTERR	"[+] error: the maxium number of IPs to filter is 5!\n"
+#define FILTIPINPUTERR	"[+] error: the maximum number of IPs to filter is 5!\n"
 #define DOMAINERR	"[+] error: entered domain is not valid!\n"
 #define CREATEFILEERR	"%s\"%s\"!\n\n", "[+] error creating results file on ", argv[(i+1)]
 #define OPENFILEERR	"%s\"%s\"!\n\n", "[+] error opening wordlist file ", wordlistFilename

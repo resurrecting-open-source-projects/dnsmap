@@ -5,8 +5,8 @@ SYNOPSIS
   dnsmap-bulk <domains-file> [results-path]
 
 DESCRIPTION
-  dnsmap-bulk is used to brute force several target domains in bulk fashion. In other words is possible
-  use a list of domains from a file to scan multiple targets using dnsmap as backend.
+  dnsmap-bulk is used to bruteforce several target domains in bulk fashion. In other words, is possible
+  get a list of domains from a file to scan multiple targets using dnsmap as backend.
 
   WARNING: using dnsmap-bulk, dnsmap will always use the default options, i.e. built-in wordlist,
   delay = 10 ms, never ignoring IPs.

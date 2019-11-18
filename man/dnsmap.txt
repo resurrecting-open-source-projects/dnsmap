@@ -1,12 +1,12 @@
 NAME
-  dnsmap - scan for subdomains using brute-forcing techniques
+  dnsmap - scan for subdomains using bruteforcing techniques
 
 SYNOPSIS
   dnsmap <target-domain> [options]
 
 DESCRIPTION
   dnsmap scans a domain for common subdomains using a built-in or an external wordlist (if specified
-  using -w option). The internal wordlist has around 1000 words in English and Spanish as ns1, firewall
+  with -w option). The internal wordlist has around 1000 words in English and Spanish as ns1, firewall,
   servicios and smtp. So will be possible search for smtp.example.com inside example.com automatically.
   Results can be saved in CSV and human-readable format for further processing. dnsmap does NOT require
   root privileges to be run, and should NOT be run with such privileges for security reasons.
@@ -18,9 +18,9 @@ DESCRIPTION
   infrastructure security assessments. During the enumeration stage, the security consultant would
   typically discover the target company's IP netblocks, domain names, phone numbers, etc.
 
-  Subdomain brute-forcing is another technique that should be used in the enumeration stage, as it's
-  especially useful when other domain enumeration techniques such as zone transfers don't work (I
-  rarely see zone transfers being publicly allowed these days by the way).
+  Subdomain bruteforcing is another technique that should be used in the enumeration stage, as it's
+  especially useful when other domain enumeration techniques such as zone transfers don't work (is
+  rare to see zone transfers being publicly allowed these days by the way).
 
   Fun things that can happen:
 
@@ -37,7 +37,7 @@ DESCRIPTION
       DNS resolving (as opposed to zone transfers for instance).
 
    5. Discover embedded devices configured using Dynamic DNS services (e.g.: IP Cameras). This method
-      is an alternative to finding devices via Google hacking techniques
+      is an alternative to finding devices via Google hacking techniques.
 
 OPTIONS
   -w <wordlist-file>         Use an external wordlist instead of the built-in one. You can use programs
@@ -94,6 +94,7 @@ SEE ALSO
   crunch(1), cupp(1), dnsmap-bulk(1)
 
 AUTHOR
-  dnsmap was originally written by "pagvac" in 2006. Currently it is maintained by volunteers.
+  dnsmap was originally written by "pagvac" in 2006. Currently it is maintained by volunteers,
+  inside dnsmap project, at https://github.com/resurrecting-open-source-projects/dnsmap/
 
   This manpage was written by Joao Eriberto Mota Filho.

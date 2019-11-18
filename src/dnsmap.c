@@ -387,7 +387,7 @@ int main(int argc, char *argv[]) {
 				//strncpy(dom,"",MAXSTRSIZE-strlen(dom)-1);
 				for(i=0;i<strlen(dom);++i)
 					dom[i]='\0';
-				fscanf(fpWords,"%100s",dom); // wordlist subdomain not allowed to be more than 100 chars
+				if(fscanf(fpWords,"%100s",dom)) {}; // wordlist subdomain not allowed to be more than 100 chars
 				#if DEBUG
 					printf("lengh of dom: %d\n",strlen(dom));				
 				#endif

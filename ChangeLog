@@ -1,3 +1,22 @@
+18/11/2019: dnsmap 0.35 released at www.github.com
+
+    [ Joao Eriberto Mota Filho ]
+
+ * Building:
+   - Using autotools.
+   - Added the autogen.sh file.
+   - Moved all source code to src/.
+   - Removed .sh extension from dnsmap-bulk.
+   - Using ccpp.yml to provide CI tests for GitHub.
+ * Added/updated headers and rights in all files.
+ * Created AUTHORS, CONTRIBUTING.md and NEWS files.
+ * Created manpages.
+ * Fixed a building warning.
+ * Moved documents to doc/.
+ * Reorganized ChangeLog file.
+ * Rewritten README file (now README.md).
+ * Using an updated LICENSE file.
+
 20/02/2010: dnsmap 0.30 released at www.gnucitizen.org
 * IPv6 support
 * Makefile included

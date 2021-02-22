@@ -2,7 +2,7 @@
 # This file is under GPL-2+ license.
 
 AC_PREREQ([2.69])
-AC_INIT([dnsmap], [0.35], [https://github.com/resurrecting-open-source-projects/dnsmap/issues])
+AC_INIT([dnsmap], [0.36], [https://github.com/resurrecting-open-source-projects/dnsmap/issues])
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([src/dnsmap.h])
 AC_CONFIG_HEADERS([config.h])

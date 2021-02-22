@@ -13,9 +13,9 @@ txt2man -d "$T2M_DATE" -t $T2M_NAME -r $T2M_NAME-$T2M_VERSION -s $T2M_LEVEL -v "
 }
 
 # MANPAGE 1
-T2M_DATE="18 Nov 2019"
+T2M_DATE="22 Feb 2021"
 T2M_NAME=dnsmap
-T2M_VERSION=0.35
+T2M_VERSION=0.36
 T2M_LEVEL=1
 T2M_DESC="scan for subdomains using bruteforcing techniques"
 make-man

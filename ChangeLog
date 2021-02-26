@@ -1,3 +1,11 @@
+22/2/2021: dnsmap 0.36 released at www.github.com
+
+    [ Patch fix by Root: https://github.com/setuidroot/dnsmap ]
+
+ * Patch: Fix dnsmap to work with TLD (domains) longer than 6 characters.
+   - Changed TLD domain character limit from 6 characters up to 13 characters.
+   - dnsmap now works with .network domains and other TLDs longer than 6 characters.
+
 18/11/2019: dnsmap 0.35 released at www.github.com
 
     [ Joao Eriberto Mota Filho ]

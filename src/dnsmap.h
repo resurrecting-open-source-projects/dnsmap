@@ -21,7 +21,7 @@
 
 #define MAXSUBSIZE 	100
 #define MAXSTRSIZE 	200
-#define BANNER 		"dnsmap 0.35 - DNS Network Mapper\n\n"
+#define BANNER 		"dnsmap 0.36 - DNS Network Mapper\n\n"
 #define USAGE 		"usage: dnsmap <target-domain> [options]\n\noptions:\n"\
 			"-w <wordlist-file>\n-r <regular-results-file>\n-c <csv-results-file>\n"\
 			"-d <delay-millisecs>\n-i <ips-to-ignore> (useful if you're obtaining false positives)\n\n"
@@ -43,7 +43,7 @@
 #define BUILTINMSG	"%s%s%s\n", "[+] searching (sub)domains for ", argv[1], " using built-in wordlist"
 #define EXTERNALMSG	"%s%s%s%s\n", "[+] searching (sub)domains for ", argv[1], " using ", wordlistFilename
 #define DELAYMSG	"%s%d%s\n", "[+] using maximum random delay of ", milliseconds, " millisecond(s) between requests"
-#define FILTERMSG	"[+] %d provided IP address(es) will be ignored from results: %s\n", filtIPcount, argv[i+1] 
+#define FILTERMSG	"[+] %d provided IP address(es) will be ignored from results: %s\n", filtIPcount, argv[i+1]
 #define RESULTSMSG1	"[+] %d internal IP address(es) disclosed\n", intIPcount
 #define RESULTSMSG2	"[+] regular-format results can be found on %s\n", txtResultsFilename
 #define RESULTSMSG3	"[+] completion time: %lu second(s)\n", end-start
@@ -53,7 +53,7 @@
 #define TRUE 1
 #define DEBUG 0
 
-// buil-in list of subdomains
+// built-in list of subdomains
 // mainly targeting English and Spanish keywords
 char sub[][MAXSUBSIZE]=
 {

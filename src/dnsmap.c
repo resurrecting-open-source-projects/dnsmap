@@ -665,7 +665,8 @@ unsigned short int isValidDomain(char *d) {
 		printf("tld\'s length: %d\n",strlen(tld));
 		printf("dom: %s tld: %s\n",d,tld);
 	#endif
-	if((strlen(tld)<2) || (strlen(tld)>6)) // tld must be between 2-6 char. e.g. .museum, .uk
+	// Below function updated to support TLDs up to 13 characters in length (.network and others.) PR by setuidroot on Feb 22 2021
+	if((strlen(tld)<2) || (strlen(tld)>13)) // tld must be between 2-13 char. e.g. .international, .uk
 		return FALSE;
 
 	// valid domain can only contain digits, letters, dot (.) and dash symbol (-)

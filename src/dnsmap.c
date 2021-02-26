@@ -1,6 +1,7 @@
 /*
 # dnsmap - DNS Network Mapper by pagvac
 # Copyright 2006-2010 gnucitizen.org
+# Copyright 2021      setuidroot <32213080+setuidroot@users.noreply.github.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

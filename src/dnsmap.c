@@ -22,15 +22,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
+#ifdef _WIN32
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#include <iphlpapi.h>
+#include <ws2def.h>
+#pragma comment(lib, "Ws2_32.lib")
+#else
 #include <netdb.h>
-#include <string.h>
-#include <time.h>
 #include <unistd.h>
-#include <ctype.h>
-#include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#endif
+#include <string.h>
+#include <time.h>
+#include <ctype.h>
+#include <sys/types.h>
 #include "dnsmap.h" // built-in subdomains list and define macros
 
 
@@ -217,7 +225,14 @@ int main(int argc, char *argv[]) {
 			}
 		}
 	}
+#if _WIN32
+	WORD wVersionRequested;
+	WSADATA wsaData;
+	int err;
+	wVersionRequested = MAKEWORD(2, 2);
 
+	WSAStartup(wVersionRequested, &wsaData);
+#endif
 	// read subdomains from built-in list
 	if(!wordlist) {
 		// openDNS detection
@@ -582,6 +597,21 @@ unsigned short int wildcarDetect(char *dom, char *ipstr) {
 	else
 		return FALSE;
 }
+
+#ifdef _WIN32
+void usleep(__int64 usec) 
+{ 
+	HANDLE timer; 
+	LARGE_INTEGER ft; 
+
+	ft.QuadPart = -(10*usec); // Convert to 100 nanosecond interval, negative value indicates relative time
+
+	timer = CreateWaitableTimer(NULL, TRUE, NULL); 
+	SetWaitableTimer(timer, &ft, 0, NULL, NULL, 0); 
+	WaitForSingleObject(timer, INFINITE); 
+	CloseHandle(timer); 
+}
+#endif
 
 // return number of milliseconds delayed
 unsigned short int dodelay(unsigned short int maxmillisecs) {

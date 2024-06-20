@@ -1,4 +1,4 @@
-# dnsmap
+# 🚨Please note dnsmap has moved to [github.com/pagvac/dnsmap](https://github.com/pagvac/dnsmap)
 
 #### dnsmap - scan for subdomains using brute-forcing techniques
 
@@ -81,4 +81,4 @@ On Debian systems you can use '# apt install dnsmap'.
 dnsmap was originally developed by "pagvac" under GPL-2+ license.
 
 Currently, the source code and newer versions are available at
-https://github.com/resurrecting-open-source-projects/dnsmap
+https://github.com/pagvac/dnsmap
